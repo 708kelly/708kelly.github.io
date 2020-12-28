@@ -1,0 +1,390 @@
+//顏色定義
+$color_blue: #282f44
+$color_brown: #E6AF2E
+$color_yellow: #f5d061
+$color_white: #ececec
+//-------------------------------------
+//改變預設字型
+*
+  font-family: 'Oswald', 微軟正黑體
+  // border: solid 1px !important
+
+//-------------------------------------
+//一些常用的mixin
+@mixin ab_center
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%,-50%)
+
+@mixin size($w,$h)
+  width: $w
+  height: $h
+  
+//-------------------------------------
+html,body
+  overflow-x: hidden
+  font-size: 16px
+  
+//首頁
+header
+  position: relative
+  background-color: $color_blue
+  text-align: center
+  .icon
+    width: 90%
+    max-width: 70%
+    padding: 150px 0px
+    
+  //底部邊界
+  .marginbottom
+    position: absolute
+    width: 95%
+    bottom: 0px
+    right: 0px
+    z-index: 3
+    animation: upin 2s both
+    
+  @keyframes upin
+    0%
+      bottom: -100px
+    100%
+      bottom: 0px
+    
+  .explore
+    +ab_center
+    font-size: 16px
+    color: $color_yellow
+    top: 85%
+    opacity: 0
+    transition: 0.5s
+    &:after
+      display: block
+      content: "v"
+      transform: scaleX(1.2) scaleY(0.5)
+    &.at_top
+      opacity: 1
+//-------------------------------------
+//導覽列
+nav.navbar
+  transition: 0.5s
+  a
+    transition: 0.5s
+//--導覽列在上方時透明
+nav.navbar.at_top
+  background-color: transparent
+  a, a:visited
+    color: white
+//-------------------------------------
+//區域的共同設定
+section
+  padding: 60px
+  position: relative
+//-------------------------------------
+//Section 簡介
+section#section_about
+  background-color: $color_brown
+  //旋轉的grid
+  height: 450px
+  
+  .container
+    display: inline-block
+    width: 40%
+    max-width: 40%
+    background-color: $color_blue
+    color: $color_white
+    h4 
+      line-height: 150%
+    
+    
+    
+  .row
+    display: relative
+    height: 150px
+    
+    
+    // color: $color_white
+    .r1text
+      font-size: 20px
+      text-align: left
+      // color: $color_white
+      // transition: 0.1s 
+    .r2text
+      font-size: 15px
+      
+      // transition: 0.2s
+    .r3text
+      font-size: 10px
+      text-align: left
+    
+      
+      
+    
+      
+  .cat
+    // width: 30%
+    max-width: 50%
+    // position: absolute
+    top: 10px
+    left: 10%
+    position: relative
+  
+  //底部邊界
+  .marginbottom
+    position: absolute
+    width: 60%
+    top: calc(100% - 2px)
+    z-index: 3
+    
+  .btn-area
+    height: 150px
+  a
+    +ab_center
+    transform: translate(-50%,-50%) rotate(10deg)
+    
+section#section_history
+  background-color: $color_white
+  padding: 10px 80px
+  
+  .row 
+    height: 350px
+    // display: flex
+    h1
+      background-color: $color_blue
+      color: $color_white
+      font-size: 24px
+      padding: 5px 20px
+      display: inline-block
+      font-weight: normal
+    h4
+      color: $color_blue
+      padding: 5px 10px
+      line-height: 150%
+      
+    .history-line
+      width: 70%
+      position: absolute
+      left: 50%
+      // top: 50%
+      transform: translate(-50%,0%)
+    
+    .card_list
+      
+      // background-color: $color_brown
+      width: 90%
+      display: flex
+      padding: 10px 10px
+      // justify-content: center
+    .card
+      left: 50px
+      display: inline-block
+      position: relative
+      width: calc( 100% / 3 - 5px)
+      
+      
+      cursor: pointer
+      // background-color: $color_yellow
+      // display: block
+      padding: 10px 10px
+    .card_detail
+      overflow: hidden
+      // text-align: center
+      height: 300px
+      box-shadow: 0px 0px 5px rgba(black,0.8) 
+      &:before
+        content: ""
+        display: block
+        +size(calc(100% - 20px), calc(100% - 20px))
+        position: absolute
+        left: 10px
+        top: 10px
+        opacity: 0
+        z-index: 5
+        background-color: rgba(0,0,0,0.7)
+        transition: 0.5s
+      .p_texts
+        +ab_center
+        z-index: 5
+        opacity: 0
+        color: $color_white
+        transition: 0.5s
+        .contents
+          line-height: 18px
+          font-size: 15px
+        // display: inline-block
+      &:hover
+        &:before, .p_texts
+          opacity: 1
+
+    .history_ppl
+      width: 100%
+      // +ab_center
+     
+    
+      
+
+
+
+
+
+
+//Section 服務
+section#section_service
+  background-color: $color_white
+  padding: 80px 0px
+  
+  .col-sm-4
+    text-align: center
+    // width: 260px
+    width: calc( 100% / 4 - 5px)
+    cursor: pointer
+    // border: solid 1px black
+    // margin-left: 20px
+    &:before
+      content: ""
+      display: block
+      +size(100%,100%)
+    
+      position: absolute
+      left: 0
+      top: 0
+      
+      // background-color: rgba(0,0,0,0.7)
+      opacity: 0
+      z-index: 5
+      transition: 0.5s
+    img
+      opacity: 1
+    .texts
+      // +ab_center
+      z-index: 5
+      opacity: 0
+      color: $color_yellow
+      transition: 0.5s
+      
+      
+    .title
+      line-height: 24px
+      
+    &:hover
+      &:before, .texts
+        opacity: 1
+    
+    
+  h1
+    background-color: $color_blue
+    color: $color_white
+    font-size: 24px
+    padding: 5px 20px
+    display: inline-block
+    font-weight: normal
+    
+  h3 
+    color: $color_brown
+    
+  .icon_service
+    width: 100%
+//-------------------------------------
+//Section 作品
+section#section_works
+  background-color: $color_white
+  padding-top: 0px
+  h1
+    background-color: $color_blue
+    color: $color_white
+    font-size: 24px
+    padding: 6px 25px
+    display: inline-block
+    font-weight: normal
+    
+  .marginbottom
+    position: absolute
+    width: 90%
+    right: 0px
+    top: calc(100% - 2px)
+    z-index: 3
+    max-width: 900px
+  .main
+    background-color: $color_blue
+  .main_pic
+    width: 70%
+  .col-sm-6
+    overflow: hidden
+  .row
+    display: flex
+  .work
+    height: 230px
+    // cursor: pointer
+    position: relative
+    padding: 10px
+    display: inline-block
+    overflow: hidden
+    width: calc( 100% / 3 - 5px)
+    
+    .title
+      line-height: 24px
+      
+    &:before
+      content: ""
+      display: block
+      +size(100%,100%)
+    
+      position: absolute
+      left: 0
+      top: 0
+      
+      background-color: rgba(0,0,0,0.7)
+      opacity: 0
+      z-index: 5
+      transition: 0.5s
+    img
+      opacity: 1
+    .texts
+      +ab_center
+      z-index: 6
+      opacity: 0
+      color: $color_white
+      transition: 0.5s
+      width: 80%
+      
+      
+    .title
+      line-height: 24px
+
+      
+    &:hover
+      &:before, .texts
+        opacity: 1
+      
+    .large_pic, .small_pic
+      top: 0px
+      position: relative
+      width: 50%
+    .large_pic
+      +ab_center
+      width: 100%
+    
+//-------------------------------------
+//Section 聯絡資訊
+section#section_contact
+  background-color: $color_blue
+  color: white
+  overflow: hidden 
+  h1
+    color: $color_white
+  .main_pic
+    width: 70%
+    
+
+  
+    
+//-------------------------------------
+//footer 底部
+footer#footer
+  background-color: $color_blue
+  text-align: center
+  
+  .icon
+    width: 80%
+    max-width: 30%
+    padding: 80px 0px

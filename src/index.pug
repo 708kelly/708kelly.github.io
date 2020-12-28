@@ -1,0 +1,175 @@
+//- 導覽列
+nav.navbar.navbar-default.navbar-fixed-top.at_top
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='#header_index') 腰懸蹀躞
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='#section_about') About
+        
+        li
+          a(href='#section_history')
+            | 腰帶歷史
+            
+        li
+          a(href='#section_works')
+            | 遊牧生活
+            span.sr-only (current)
+        li
+          a(href='#section_contact') 結語
+    // /.nav-collapse
+
+//首頁
+header#header_index
+  .container
+    img.icon(src="https://imgur.com/Tp0GNfm.png")
+    img.marginbottom.mountain(src="http://awiclass.monoame.com/img/margin/m_index.svg")
+  .explore.at_top EXPLORE
+//關於
+section#section_about
+  .container
+    //第一行-標題
+    h2.r1text 展覽介紹
+    hr
+    h4.r3text 腰帶之上懸掛物件所具備的意義，牙籤筒這種明顯具有衛生清潔實用意義的物件為何被做的小巧玲瓏，掛於腰上；而其他如荷包、火鐮盒一般懸掛於滿人腰帶上的物件又為何被加上富麗有致的裝飾，持續被配戴？將這些精緻物件與腰帶做連結，帶出腰帶配飾在滿人生活中的意義與淵源，並探討其從游牧生活實用性到定居社會裝飾炫耀性的轉變。
+
+  iframe.cat(width='400' height='255' src='https://www.youtube.com/embed/WVXQ-wBYZW8' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+//- img.marginbottom(src="http://awiclass.monoame.com/img/margin/m_about.svg")
+section#section_history
+  .containter
+    .row
+      .col-sm-12
+        h1 腰帶中國歷史
+        h4 配戴腰帶一事自古有之，最初是為了束定袍服而存在，透過在腰部綁上一條可以活動解開的帶子以保證穿著的便利性。
+        img.history-line(src="https://imgur.com/P8YNUk4.png")
+        
+    .row
+      .card_list#card_list
+        .card(v-for="w in works.slice(0,3)")
+          .card_detail
+            img.history_ppl(v-bind:src="w.img")
+            .p_texts
+              h3.title {{w.dy}}
+              h5.contents {{w.des}}
+        
+    
+
+
+//服務
+section#section_service
+  .container
+    .row
+      .col-sm-12
+        h1 遊牧生活
+        h4 本次線上策展將焦點集中在火鐮盒（或稱火鐮盒包、火鐮袋）、荷包、牙籤筒、帉帨、扳指等能夠與以往滿人游牧生活樣態相呼應的物件之上。
+    .row#life_list
+      .col-sm-4(v-for="w in works.slice(0,4)" v-on:mouseover="mouseover($event, w)" v-on:mouseleave="mouseleave($event, w)")
+        img.icon_service(v-bind:src="w.show")
+        a.texts(v-bind:href="w.url") {{w.activity}}
+
+    
+        
+
+
+//作品
+section#section_works
+  img.marginbottom.mountain(src="http://awiclass.monoame.com/img/margin/m_works.svg")
+  .container
+    .row.main
+      h1 清 皇帝吉服帶
+      img.main_pic(src="https://drive.google.com/uc?export=view&id=161dLRCfbScOJRSajeWJqCm0GCt_8zMKU")
+    .row
+      .work
+        img.large_pic(src = "https://imgur.com/zcZWtDh.png")
+        .texts
+          h2.title 清 乾隆 扳指
+          h5  清 高宗  西元1736-1795年
+          h5.content 高2.5公分 口徑3公分
+          h5.content 瓷胎，短管狀，口徑一端較大，全器施白釉，中央裝飾一道橫條帶狀黑釉圈紋，內外皆戳刻小凹點，加施褐黑色釉，一式二十件，共同儲存於一個木匣中。
+        
+      .work.texts
+        h2.title 扳指 
+        h4 扳指則隨著射箭習俗的生疏，演變為裝飾、賞玩之器，最終成為上流社會社交禮儀的必備品，也出現了專門用來盛裝扳指的華麗扳指套，一樣懸掛在腰帶上。
+        
+      .work
+        img.small_pic(src="https://drive.google.com/uc?export=view&id=1nrR9qV4Sc5ris2lL1CLNidm4E4t1qCCC")
+        img.small_pic(src="https://drive.google.com/uc?export=view&id=1w_GD5ol6OvuuhP5UvjdhB5gk5B_3jCri")
+      img(src="")
+      
+    .row
+      .work
+        img.large_pic(src = "https://imgur.com/rtlB1pC.png")
+        .texts
+          h4.title 乾隆 磁胎洋彩西洋人物山水火鐮盒
+          h5  西元1736-1795年
+          h5.content 高6.6公分 長7.5公分 寬3.2公分
+          h5.content 
+        
+      .work.texts
+        h2.title 火鐮
+        h4 火鐮盒內部放置金屬火鐮與打火石，用來隨時生火，火鐮或火鐮盒本身也常被存放在荷包之中。
+        
+      .work
+        h4 火鐮盒本身雖然仍具有相當程度的實用意義，但上面繁複的造型與不同的材質也是一種身份上的象徵。
+        img.large_pic(src="https://imgur.com/UY1Bwbq.png")
+      
+    .row
+      .work.texts
+        h2.title 荷包
+        h4 荷包在原本游牧生活中作為儲存乾糧、肉乾等食物的隨身皮囊被使用。滿人是關外的游牧民族,對他們來說腰帶上掛的荷包是重要的配件,與現今裝滿錢與各式證件的荷包不同,滿人的荷包是用來裝乾糧與用來打火的燧石-是馬上賴以維生的工具,也因此對滿人來說荷包特別是用來裝燧石的火鐮荷包具有象徵意義,象徵著祖宗的勤勉節儉與辛勞.滿人入關後火鐮荷包成為上朝需配戴的飾品,是為了提醒朝臣不忘本,有時皇帝會賞賜火鐮荷包以勉勵朝臣。
+      .work
+        img.large_pic(src = "https://imgur.com/UY1Bwbq.png.png")
+        .texts
+          h4.title 清 孝賢純皇后繡花卉火鐮荷包
+          h5  清 乾隆  西元1736 -1795年
+          h5.content 全長13.4公分 長5.2公分 寬3.6公分
+          h5.content 
+      .work
+        h4 孝賢純皇后綉花卉火鐮荷包 是乾隆十二年(1747) 孝賢純皇后富察氏親手縫製, 作三折式，中間一折附夾層，一端收尖內附銀鈎，可鉤在腰帶上，內置火石及艾絨。在滿人入關後生活逐漸奢華, 火鐮荷包開始有珠寶等裝飾,與提醒祖先勤勉節儉的理念相悖,但這個火鐮荷包沒有多餘的裝飾,可見孝賢純皇后用心,目的要使皇帝回想起簡樸的游牧民族文化。
+    .row
+      .work
+        img.large_pic(src = "https://imgur.com/DVrDotK.png")
+        .texts
+          h4.title 清 粉彩瓷牙籤筒
+          h5 西元1644-1911年
+          h5.content 高10.2公分 底徑2.3公分 口徑2.3公分
+          h5.content 
+        
+      .work.texts
+        h2.title 牙籤筒
+        h4 鞘刀與牙籤筒的用處則更加直觀，作為切割食材與儲存飯後剔牙牙籤的生活物件被掛在腰上。
+        
+      .work
+        img.large_pic(src="https://theme.npm.edu.tw/opendata/att/collectionPic/04010684/17013166.jpg")
+
+      
+        
+      
+      
+    
+
+//聯絡
+section#section_contact
+  
+  .container
+    .row
+      .col-sm-6
+        h1 實用性與裝飾性
+        hr
+        h3 來自關外的清朝政權在入關之初曾對後代有所訓誡：「我朝服飾，列祖所定，太宗嘗誡後世衣冠儀制，永遵勿替。」，要求將入關以前的傳統服飾習慣保留，希望後代不要忘記遊牧民族的傳統與精神。原本用意為告誡後代，守護滿族傳統的腰帶佩飾隨著游牧文化定居化而逐漸往裝飾性、地位或炫耀性的用途轉變，後期也能觀察到越來越多樣與游牧生活無關的活計被安置到了腰帶之上，腰帶的滿族痕跡漸漸淡化。但從這些物件與接下來的幾件展件選件之中，仍然能夠一窺滿人游牧生活，追溯這些物件原本的實用性功用。
+      .col-sm-6
+        img.main_pic(src="https://drive.google.com/uc?export=view&id=19-oKiS_Yi2aCVIoJYf4YRP-Kvdx-DCeO")
+        img.main_pic(src="https://imgur.com/OBzTYBi.png")
+        
+
+//footer
+footer#footer
+  img.icon(src="https://imgur.com/lDSgVxN.png")
+  
