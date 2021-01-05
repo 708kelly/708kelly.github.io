@@ -17,8 +17,6 @@ $(document).on('click', 'a', function (event) {
 //更新一些移動景物的位置
 
 
-
-
 //vue監看物件
 var vm_c = new Vue({
   el: "#card_list",
