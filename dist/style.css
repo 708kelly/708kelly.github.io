@@ -83,7 +83,7 @@ section#section_about .ttl_container{
   width: 80%;
   transform: translate(-50%,0%);
 }
-section#section_about .ttl_container.container {
+section#section_about .ttl_container .container {
   display: inline-block;
   width: 40%;
   max-width: 40%;
@@ -94,7 +94,7 @@ section#section_about .ttl_container.container {
 section#section_about .ttl_container h2 {
   text-align: center;
 }
-section#section_about .ttl_container.container h4 {
+section#section_about .ttl_container .container h4 {
   line-height: 150%;
 }
 section#section_about .row {
