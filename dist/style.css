@@ -77,14 +77,23 @@ section#section_about {
   background-color: #E6AF2E;
   height: 450px;
 }
-section#section_about .container {
+section#section_about .ttl_container{
+  position: absolute;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%,0%);
+}
+section#section_about .ttl_container.container {
   display: inline-block;
   width: 40%;
   max-width: 40%;
   background-color: #282f44;
   color: #ececec;
 }
-section#section_about .container h4 {
+section#section_about .ttl_container.r1text {
+  text-align: center;
+}
+section#section_about .ttl_container.container h4 {
   line-height: 150%;
 }
 section#section_about .row {
@@ -93,7 +102,7 @@ section#section_about .row {
 }
 section#section_about .row .r1text {
   font-size: 20px;
-  text-align: center;
+  text-align: left;
 }
 section#section_about .row .r2text {
   font-size: 15px;
