@@ -89,8 +89,9 @@ section#section_about .ttl_container.container {
   max-width: 40%;
   background-color: #282f44;
   color: #ececec;
+  position: relative;
 }
-section#section_about .ttl_container.r1text {
+section#section_about .ttl_container h2 {
   text-align: center;
 }
 section#section_about .ttl_container.container h4 {
